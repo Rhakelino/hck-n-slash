@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hack 'n' Slash — Top-Down Arena</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- UI Overlay -->
+    <div id="ui-overlay">
+        <div id="hp-bar-container">
+            <div id="hp-bar"></div>
+            <span id="hp-text">100 / 100</span>
+        </div>
+
+        <div id="cooldowns">
+            <div class="cooldown-item" id="cd-dash">
+                <div class="cd-fill"></div>
+                <span>DASH<br><small>Space</small></span>
+            </div>
+            <div class="cooldown-item" id="cd-skill">
+                <div class="cd-fill"></div>
+                <span>SPIN<br><small>E</small></span>
+            </div>
+            <div class="cooldown-item ulti-item" id="cd-ulti">
+                <div class="cd-fill"></div>
+                <span>FIST CRACK<br><small>R (ULTI)</small></span>
+            </div>
+        </div>
+
+        <div id="wave-info">Wave: <span id="wave-number">—</span></div>
+        <div id="kill-count">Kills: <span id="kill-number">0</span></div>
+    </div>
+
+    <!-- Game Over Screen -->
+    <div id="game-over">
+        <h1>GAME OVER</h1>
+        <p>Waves Survived: <span id="final-wave">0</span></p>
+        <p>Total Kills: <span id="final-kills">0</span></p>
+        <button onclick="Game.restart()">⚔ RESTART ⚔</button>
+    </div>
+
+    <!-- Scripts (order matters) -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/animation.js"></script>
+    <script src="js/engine.js"></script>
+    <script src="js/asset_generator.js"></script>
+    <script src="js/network.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/enemy.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

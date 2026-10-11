@@ -1,0 +1,13 @@
+{
+  "name": "hack-and-slash-2d-multiplayer",
+  "version": "1.0.0",
+  "description": "2D Top-Down Hack 'n' Slash Co-op Multiplayer Game",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "socket.io": "^4.7.5"
+  }
+}
